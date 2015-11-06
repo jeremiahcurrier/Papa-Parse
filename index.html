@@ -8,8 +8,17 @@ Source: https://cmatskas.com/importing-csv-files-using-jquery-and-html5/
   <meta charset = "UTF-8" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js" type="text/javascript"></script>
+  
+  <!-- Zendesk iFrame SDK -->
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/latest/zaf_sdk.js"></script>
+  
   <script type="text/javascript">
     $(document).ready(function() {
+
+      // Zendesk iFrame SDK
+      var app = document.ZAFClient.init();
+      console.log('app:');
+      console.log(app);
         
         // The event listener for the file upload
         document.getElementById('txtFileUpload').addEventListener('change', upload, false);
@@ -49,7 +58,9 @@ Source: https://cmatskas.com/importing-csv-files-using-jquery-and-html5/
         };
     });
   </script>
-  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/latest/zaf_sdk.js"></script>
+  
+<!--
+
   <script>
     var app = window.ZAFClient.init();
 
@@ -66,6 +77,9 @@ Source: https://cmatskas.com/importing-csv-files-using-jquery-and-html5/
       }
     });
   </script>
+
+-->
+
 </head>
 <body>
   <h1>File Upload Test</h1>
