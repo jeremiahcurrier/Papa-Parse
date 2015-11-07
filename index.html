@@ -9,8 +9,42 @@ Source: https://cmatskas.com/importing-csv-files-using-jquery-and-html5/
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js" type="text/javascript"></script>
   
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/latest/zaf_sdk.js"></script>
+
   <script type="text/javascript">
+
     $(document).ready(function() {
+
+
+
+      // console.log('document:');
+      // console.log(document);
+      // console.log('window:');
+      // console.log(window);
+
+
+
+      var app = window.ZAFClient.init();
+
+
+
+      // console.log('app:');
+      // console.log(app);
+
+
+
+    // app.postMessage('hello', { foo: true }); // post the message 'hello' to the Zendesk app
+
+    // listen to the 'app.registered' event, which is fired by the framework once the iframe is registered with the app
+    // app.on('app.registered', function(data) {
+    //   // go nuts
+    // });
+
+    // app.on('helloIframe', function(data) { // listen to the 'helloIframe' message sent from the app
+    //   if (data.bar) {
+    //     // app says hello
+    //   }
+    // });
         
         // The event listener for the file upload
         document.getElementById('txtFileUpload').addEventListener('change', upload, false);
@@ -37,11 +71,14 @@ Source: https://cmatskas.com/importing-csv-files-using-jquery-and-html5/
                         var csvData = event.target.result;
                         data = $.csv.toArrays(csvData);
                         if (data && data.length > 0) {
-                              alert('Imported -' + data.length + '- rows successfully!');
+                          console.log('data:');
+                          console.log(data);
+                          console.log('app:');
+                          console.log(app);
+                          alert('Imported -' + data.length + '- rows successfully!');
                         } else {
-                            alert('No data to import!');
+                          alert('No data to import!');
                         }
-                        console.log(data);
                     };
                     reader.onerror = function() {
                          alert('Unable to read ' + file.fileName);
