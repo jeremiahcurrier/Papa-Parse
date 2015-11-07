@@ -76,9 +76,11 @@ Source: https://cmatskas.com/importing-csv-files-using-jquery-and-html5/
                           console.log('app:');
                           console.log(app);
 
-                          // app.postMessage('hello', { foo: true }); // post the message 'hello' to the Zendesk app
+                          app.postMessage('hello', { foo: true }); // post the message 'hello' to the Zendesk app
 
                           app.postMessage('hello'); // post the message 'hello' to the Zendesk app
+
+                          console.log('before');
 
                           // listen to the 'app.registered' event, which is fired by the framework once the iframe is registered with the app
                           app.on('app.registered', function(data) {
@@ -86,7 +88,7 @@ Source: https://cmatskas.com/importing-csv-files-using-jquery-and-html5/
                             console.log('app registered');
                           });
 
-                          
+                          console.log('after');
 
                           alert('Imported -' + data.length + '- rows successfully!');
                         } else {
