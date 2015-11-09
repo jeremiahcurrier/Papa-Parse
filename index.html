@@ -41,7 +41,8 @@
             if (data && data.length > 0) {
               console.log('Parses CSV results:');
               console.log(data);
-              app.postMessage('hello', { data : 'hello world' });
+              var parsedCSV = data;
+              app.postMessage('parsedCSV', { parsedCSV : parsedCSV });
               alert('Imported -' + data.length + '- rows successfully!');
             } else {
               alert('No data to import!');
