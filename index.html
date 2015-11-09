@@ -83,20 +83,22 @@ Source: https://cmatskas.com/importing-csv-files-using-jquery-and-html5/
                           console.log(data);
                           console.log('app:');
                           console.log(app);
+                          
+                          app.postMessage('test', 'hey jeremiah');
 
-                          app.postMessage('hello', { foo: true }); // post the message 'hello' to the Zendesk app
+                          // app.postMessage('hello', { foo: true }); // post the message 'hello' to the Zendesk app
 
-                          app.postMessage('hello'); // post the message 'hello' to the Zendesk app
+                          // app.postMessage('hello'); // post the message 'hello' to the Zendesk app
 
-                          console.log('before');
+                          // console.log('before');
 
-                          // listen to the 'app.registered' event, which is fired by the framework once the iframe is registered with the app
-                          app.on('app.registered', function(data) {
-                            // go nuts
-                            console.log('app registered');
-                          });
+                          // // listen to the 'app.registered' event, which is fired by the framework once the iframe is registered with the app
+                          // app.on('app.registered', function(data) {
+                          //   // go nuts
+                          //   console.log('app registered');
+                          // });
 
-                          console.log('after');
+                          // console.log('after');
 
                           alert('Imported -' + data.length + '- rows successfully!');
                         } else {
