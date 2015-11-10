@@ -42,7 +42,7 @@
               console.log('Parses CSV results:');
               console.log(data);
               var parsedCSV = data;
-              app.postMessage('parsedCSV', { parsedCSV : parsedCSV });
+              app.postMessage('CSVtoJSON', { parsedCSV : parsedCSV });
               alert('Imported -' + data.length + '- rows successfully!');
             } else {
               alert('No data to import!');
