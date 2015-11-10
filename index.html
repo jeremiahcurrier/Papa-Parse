@@ -39,8 +39,8 @@
             var csvData = event.target.result;
             data = $.csv.toArrays(csvData);
             if (data && data.length > 0) {
-              console.log('Parses CSV results:');
-              console.log(data);
+              // console.log('Parses CSV results:');
+              // console.log(data);
               var parsedCSV = data;
               app.postMessage('CSVtoJSON', { parsedCSV : parsedCSV });
               // alert('Imported -' + data.length + '- rows successfully!');
