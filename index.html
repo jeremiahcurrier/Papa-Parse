@@ -39,11 +39,10 @@
             var csvData = event.target.result;
             data = $.csv.toArrays(csvData);
             if (data && data.length > 0) {
-              // console.log('Parses CSV results:');
-              // console.log(data);
               var parsedCSV = data;
+              // SEND PARSED CSV TO ZENDESK - start
               app.postMessage('CSVtoJSON', { parsedCSV : parsedCSV });
-              // alert('Imported -' + data.length + '- rows successfully!');
+              // SEND PARSED CSV TO ZENDESK - end
             } else {
               alert('No data to import!');
             }
